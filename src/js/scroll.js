@@ -17,7 +17,16 @@ window.addEventListener("load", function() {
         }
     }
 
+    function scrollTo(index) {
+        container.scrollTop = index * container.clientHeight;
+    }
+
     update();
 
+    for (let i = 0; i < header.children.length; i++) {
+        header.children[i].addEventListener("click", function() {
+            scrollTo(i);
+        });
+    }
     container.addEventListener("scrollend", update);
 });
