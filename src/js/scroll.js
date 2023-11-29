@@ -28,5 +28,9 @@ window.addEventListener("load", function() {
             scrollTo(i);
         });
     }
-    container.addEventListener("scrollend", update);
+    // check scrollend event
+    if (typeof container.onscrollend !== "function")
+        container.addEventListener("scroll", update);
+    else
+        container.addEventListener("scrollend", update);
 });
