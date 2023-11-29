@@ -5,7 +5,6 @@ window.addEventListener("load", function() {
     let currentPage, prevPage;
 
     function update() {
-        console.log("update")
         let top = container.scrollTop;
         let page = Math.floor(top / container.clientHeight);
 
