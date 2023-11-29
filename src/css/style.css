@@ -80,6 +80,14 @@ body {
     background-color: #bbdddd;
 }
 
+.container > .item#about > .content > .item > .content {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
+    text-align: left;
+}
+
 .container > .item#contact {
     gap: 1em;
     background-color: #ddc3bb;
@@ -106,5 +114,25 @@ body {
 .container > .item > .content > .item > .title {
     margin: 0px;
     padding: 0px;
+    font-size: 1.2em;
     font-weight: bold;
+}
+
+.container > .item > .content > .item > .content {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container > .item > .content > .item > .content > * {
+    width: 100%;
+}
+
+.container > .item > .content > .item > .content > * > .sub-title {
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+}
+
+.container > .item > .content > .item > .content > * > .sub-title::after {
+    content: ': ';
 }

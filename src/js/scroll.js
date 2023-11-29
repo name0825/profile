@@ -5,6 +5,7 @@ window.addEventListener("load", function() {
     let currentPage, prevPage;
 
     function update() {
+        console.log("update")
         let top = container.scrollTop;
         let page = Math.floor(top / container.clientHeight);
 
@@ -21,6 +22,13 @@ window.addEventListener("load", function() {
         container.scrollTop = index * container.clientHeight;
     }
 
+    function scrollEnd() {
+        console.log("scrollEnd")
+        container.removeEventListener("scroll", update);
+        container.removeEventListener("scrollend", scrollEnd);
+        container.addEventListener("scrollend", update);
+    }
+
     update();
 
     for (let i = 0; i < header.children.length; i++) {
@@ -28,9 +36,7 @@ window.addEventListener("load", function() {
             scrollTo(i);
         });
     }
-    // check scrollend event
-    if (typeof container.onscrollend !== "function")
-        container.addEventListener("scroll", update);
-    else
-        container.addEventListener("scrollend", update);
+
+    container.addEventListener("scroll", update);
+    container.addEventListener("scrollend", scrollEnd);
 });
