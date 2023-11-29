@@ -9,10 +9,10 @@ window.addEventListener("load", function() {
         let page = Math.floor(top / container.clientHeight);
 
         if (currentPage == undefined || page !== currentPage) {
-            prevPage = currentPage;
-            currentPage = page;
+            prevPage = Math.min(Math.max(currentPage ?? 0, 0), header.children.length - 1);
+            currentPage = Math.min(Math.max(page, 0), header.children.length - 1);
 
-            header.children[prevPage ?? 0].querySelector("span").classList.remove("select");
+            header.children[prevPage].querySelector("span").classList.remove("select");
             header.children[currentPage].querySelector("span").classList.add("select");
         }
     }
