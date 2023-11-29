@@ -20,9 +20,9 @@ body {
 
 .header {
     top: 0px;
-    padding: 15px;
-    width: calc(100% - 30px);
-    height: 40px;
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    height: 2rem;
     display: flex;
     position: fixed;
     align-items: center;
@@ -34,13 +34,14 @@ body {
 }
 
 .header > .item {
-    width: 10%;
+    width: 5em;
     height: 100%;
     margin: 0px;
     padding: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .header > .item > span {
@@ -61,9 +62,9 @@ body {
 }
 
 .container > .item {
-    padding: 70px;
-    width: calc(100% - 140px);
-    height: calc(100% - 140px);
+    padding-top: 4rem;
+    width: 100%;
+    height: calc(100% - 4rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,5 +81,30 @@ body {
 }
 
 .container > .item#contact {
+    gap: 1em;
     background-color: #ddc3bb;
+}
+
+.container > .item > .title {
+    margin: 0px;
+    padding: 0px;
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.container > .item > .content {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container > .item > .content > .item {
+    margin: 1em;
+    padding: 0em;
+}
+
+.container > .item > .content > .item > .title {
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
 }
